@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cabinet Koné & Associés – Avocats à Abidjan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0F2340; --deep:#0A1A30; --gold:#B8964A; --gold-soft:#D9C28A;
+  --bg:#F7F4EC; --bg2:#EFEADC; --ink:#1B2433; --muted:#5B6578; --line:#D9D2BF; --on-navy:#F3EFE3;
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --sans:'Figtree',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0C182B;--bg2:#10203A;--ink:#EDE8DA;--muted:#A7B0C0;--line:#26364F}
+}
+:root[data-theme="dark"]{--bg:#0C182B;--bg2:#10203A;--ink:#EDE8DA;--muted:#A7B0C0;--line:#26364F}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-text-size-adjust:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.1;margin:0;letter-spacing:.005em}
+
+/* barre du haut */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--deep);border-bottom:1px solid rgba(184,150,74,.35)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--on-navy);font-family:var(--serif);font-size:1.15rem;font-weight:600}
+.mono{width:36px;height:36px;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold);font-family:var(--serif);font-size:1.15rem;font-weight:700}
+.top nav{display:flex;gap:22px;align-items:center}
+.top nav a{color:var(--on-navy);text-decoration:none;font-size:.95rem;opacity:.9}
+.top nav a:hover{color:var(--gold-soft)}
+.btn-client{border:1px solid var(--gold);padding:7px 14px;color:var(--gold-soft)!important;opacity:1!important}
+@media(max-width:760px){.top nav a:not(.btn-client){display:none}}
+
+/* hero */
+.hero{background:var(--navy);color:var(--on-navy);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:max(22px,calc(50% - 498px));top:0;bottom:0;width:1px;background:linear-gradient(var(--gold),transparent 85%);opacity:.6}
+.hero .wrap{padding-top:84px;padding-bottom:92px}
+.hero h1{font-size:clamp(2.6rem,8vw,5.2rem);max-width:12ch;font-weight:600}
+.hero p.lead{max-width:34rem;margin:26px 0 34px;color:#D5D9E2;font-size:1.1rem}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:14px 24px;text-decoration:none;font-weight:600;font-size:.98rem;border:1px solid var(--gold);cursor:pointer;font-family:var(--sans);background:none;color:inherit}
+.btn.fill{background:var(--gold);color:var(--deep)}
+.btn.fill:hover{background:var(--gold-soft)}
+.btn.line{color:var(--gold-soft)}
+.btn.line:hover{background:rgba(184,150,74,.14)}
+.agrement{margin-top:44px;font-size:.88rem;color:#AEB7C8;max-width:30rem}
+
+/* sections */
+section{padding:84px 0}
+section.alt{background:var(--bg2)}
+.head{max-width:36rem;margin-bottom:40px}
+.head h2{font-size:clamp(2rem,5vw,2.9rem)}
+.head p{color:var(--muted);margin:14px 0 0}
+.rule{width:56px;height:2px;background:var(--gold);margin:18px 0 0;border:0}
+.about{display:grid;gap:34px}
+@media(min-width:820px){.about{grid-template-columns:1.1fr 1fr;gap:64px}}
+.about p{margin:0 0 16px;max-width:36rem}
+.values{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.values li{padding:18px 0;border-bottom:1px solid var(--line)}
+.values strong{display:block;font-family:var(--serif);font-size:1.4rem;font-weight:600}
+.values span{color:var(--muted);font-size:.97rem}
+
+/* domaines */
+.areas{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.areas li{display:grid;gap:6px;padding:26px 0;border-bottom:1px solid var(--line)}
+@media(min-width:760px){.areas li{grid-template-columns:280px 1fr;gap:40px}}
+.areas h3{font-size:1.65rem}
+.areas p{margin:0;color:var(--muted);max-width:40rem}
+
+/* équipe */
+.team{display:grid;gap:22px}
+@media(min-width:720px){.team{grid-template-columns:repeat(2,1fr)}}
+.person{display:flex;gap:18px;align-items:center;padding:22px;border:1px solid var(--line);background:var(--bg)}
+.avatar{flex:none;width:68px;height:68px;border-radius:50%;background:var(--navy);color:var(--gold-soft);display:grid;place-items:center;font-family:var(--serif);font-size:1.5rem;font-weight:600;border:2px solid var(--gold)}
+.person h3{font-size:1.45rem}
+.person p{margin:3px 0 0;color:var(--muted);font-size:.95rem}
+
+/* contact */
+.contact{display:grid;gap:40px}
+@media(min-width:820px){.contact{grid-template-columns:1fr 1fr;gap:64px}}
+.info p{margin:0 0 16px}
+.info b{display:block;font-family:var(--serif);font-size:1.2rem;font-weight:600;color:var(--gold)}
+form{display:grid;gap:14px}
+label{font-size:.92rem;font-weight:500}
+input,textarea{width:100%;padding:13px 14px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;border-radius:0}
+textarea{min-height:130px;resize:vertical}
+.note{font-size:.85rem;color:var(--muted);margin:0}
+
+.legal{padding:64px 0}
+.legal .wrap{max-width:760px}
+.legal h2{font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:6px}
+.legal h3{font-size:1.25rem;margin:26px 0 4px;color:var(--gold)}
+.legal p,.legal li{color:var(--muted);font-size:.98rem;margin:0 0 10px}
+.legal ul{padding-left:20px;margin:0 0 10px}
+footer{background:var(--deep);color:#AEB7C8;padding:34px 0 calc(34px + 70px);font-size:.88rem}
+footer a{color:#D5D9E2}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+
+/* barre d'appel mobile */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:none;background:var(--deep);border-top:1px solid var(--gold);padding:8px 10px calc(8px + env(safe-area-inset-bottom,0px));gap:8px}
+.bar a{flex:1;text-align:center;padding:12px 8px;text-decoration:none;font-weight:600;font-size:.95rem;color:var(--on-navy);border:1px solid var(--gold)}
+.bar a.wa{background:var(--gold);color:var(--deep)}
+@media(max-width:760px){.bar{display:flex}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#haut" id="brand"><span class="mono" id="mono"></span><span id="brandName"></span></a>
+    <nav aria-label="Navigation principale">
+      <a href="#cabinet">Le cabinet</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#equipe">Équipe</a>
+      <a href="#contact">Contact</a>
+      <a class="btn-client" id="portail" href="#contact">Espace client</a>
+    </nav>
+  </div>
+</header>
+
+<main id="haut">
+  <div class="hero">
+    <div class="wrap">
+      <h1 id="heroTitle"></h1>
+      <p class="lead" id="heroLead"></p>
+      <div class="cta">
+        <a class="btn fill" href="#contact">Prendre rendez-vous</a>
+        <a class="btn line" href="#expertise">Nos domaines d'expertise</a>
+      </div>
+      <p class="agrement" id="agrement"></p>
+    </div>
+  </div>
+
+  <section id="cabinet">
+    <div class="wrap about">
+      <div>
+        <div class="head"><h2>Un cabinet à taille humaine, une exigence entière</h2><hr class="rule"></div>
+        <div id="aboutText"></div>
+      </div>
+      <ul class="values" id="values"></ul>
+    </div>
+  </section>
+
+  <section class="alt" id="expertise">
+    <div class="wrap">
+      <div class="head"><h2>Domaines d'expertise</h2><hr class="rule"><p>Chaque dossier est suivi personnellement par un avocat du cabinet.</p></div>
+      <ul class="areas" id="areas"></ul>
+    </div>
+  </section>
+
+  <section id="equipe">
+    <div class="wrap">
+      <div class="head"><h2>L'équipe</h2><hr class="rule"></div>
+      <div class="team" id="team"></div>
+    </div>
+  </section>
+
+  <section class="alt" id="contact">
+    <div class="wrap">
+      <div class="head"><h2>Nous contacter</h2><hr class="rule"><p>Décrivez votre situation en quelques lignes. Le cabinet vous répond sous 24 heures ouvrées.</p></div>
+      <div class="contact">
+        <div class="info" id="info"></div>
+        <form id="form">
+          <div><label for="nom">Votre nom</label><input id="nom" name="nom" autocomplete="name" required></div>
+          <div><label for="msg">Votre message</label><textarea id="msg" name="msg" required></textarea></div>
+          <button class="btn fill" type="submit">Envoyer par WhatsApp</button>
+          <p class="note">Votre message s'ouvre dans WhatsApp, prêt à être envoyé au cabinet.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+  <section class="legal" id="mentions"><div class="wrap" id="mentionsBody"></div></section>
+  <section class="legal alt" id="confidentialite"><div class="wrap" id="confBody"></div></section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span id="footName"></span>
+    <span><a href="#mentions">Mentions légales</a> · <a href="#confidentialite">Politique de confidentialité</a> · Site de démonstration</span>
+  </div>
+</footer>
+
+<div class="bar" aria-label="Contact rapide">
+  <a id="barTel" href="#">Appeler</a>
+  <a class="wa" id="barWa" href="#">WhatsApp</a>
+</div>
+
+<script>
+/* ============ À MODIFIER POUR CHAQUE CABINET ============ */
+const CONFIG = {
+  nom: "Cabinet Koné & Associés",
+  initiale: "K",
+  titre: "Défendre vos droits avec rigueur et discrétion.",
+  accroche: "Avocats au Barreau de Côte d'Ivoire, nous accompagnons entreprises et particuliers dans leurs affaires, leurs litiges et leurs projets.",
+  agrement: "Avocats inscrits au Barreau de Côte d'Ivoire · Abidjan, Cocody",
+  apropos: [
+    "Fondé à Abidjan, le cabinet conseille et représente ses clients devant les juridictions ivoiriennes, avec une conviction : un client bien informé prend de meilleures décisions.",
+    "Nous privilégions l'écoute, la clarté des honoraires et un suivi régulier de chaque dossier, du premier rendez-vous à la décision finale."
+  ],
+  valeurs: [
+    ["Confidentialité", "Vos informations restent protégées, de l'échange initial jusqu'à la clôture du dossier."],
+    ["Clarté", "Une stratégie expliquée simplement et des honoraires annoncés dès le départ."],
+    ["Disponibilité", "Un avocat identifié pour chaque dossier, joignable par téléphone et WhatsApp."]
+  ],
+  domaines: [
+    ["Droit des affaires", "Création de sociétés, contrats commerciaux, recouvrement de créances et conseil aux dirigeants."],
+    ["Droit de la famille", "Divorce, garde d'enfants, successions et partage de biens, avec tact et discrétion."],
+    ["Droit immobilier et foncier", "Sécurisation des achats, baux, litiges de propriété et titres fonciers."],
+    ["Droit du travail", "Contrats, licenciements, conflits sociaux : nous défendons employeurs et salariés."],
+    ["Droit pénal", "Assistance et défense à chaque étape de la procédure."]
+  ],
+  equipe: [
+    ["Maître Awa Koné", "Avocate associée, droit des affaires"],
+    ["Maître Yao Konan", "Avocat associé, famille et immobilier"]
+  ],
+  adresse: "Cocody Deux Plateaux, Abidjan",
+  horaires: "Lundi au vendredi, 8h à 17h",
+  telephone: "+225 07 00 00 00 00",
+  whatsapp: "2250700000000",
+  email: "contact@exemple-cabinet.ci",
+  portail: "#contact",   // lien de l'espace client sécurisé (adresse du portail du cabinet)
+  statut: "Cabinet d'avocats inscrit au Barreau de Côte d'Ivoire",
+  responsable: "Maître Awa Koné",
+  hebergeur: "GitHub Pages (GitHub, Inc., États-Unis)",
+  createur: "Inza Seth"
+};
+/* ======================================================== */
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const C = CONFIG;
+
+document.title = C.nom + " – Avocats à Abidjan";
+$("mono").textContent = C.initiale;
+$("brandName").textContent = C.nom;
+$("heroTitle").textContent = C.titre;
+$("heroLead").textContent = C.accroche;
+$("agrement").textContent = C.agrement;
+$("aboutText").innerHTML = C.apropos.map(p => "<p>" + esc(p) + "</p>").join("");
+$("values").innerHTML = C.valeurs.map(v => "<li><strong>" + esc(v[0]) + "</strong><span>" + esc(v[1]) + "</span></li>").join("");
+$("areas").innerHTML = C.domaines.map(d => "<li><h3>" + esc(d[0]) + "</h3><p>" + esc(d[1]) + "</p></li>").join("");
+$("team").innerHTML = C.equipe.map(p => {
+  const ini = p[0].replace("Maître ", "").split(" ").map(w => w[0]).join("").slice(0, 2);
+  return '<div class="person"><div class="avatar">' + esc(ini) + '</div><div><h3>' + esc(p[0]) + '</h3><p>' + esc(p[1]) + '</p></div></div>';
+}).join("");
+const tel = "tel:" + C.telephone.replace(/\s/g, "");
+$("info").innerHTML =
+  "<p><b>Adresse</b>" + esc(C.adresse) + "</p>" +
+  "<p><b>Horaires</b>" + esc(C.horaires) + "</p>" +
+  '<p><b>Téléphone</b><a href="' + tel + '">' + esc(C.telephone) + "</a></p>" +
+  '<p><b>E-mail</b><a href="mailto:' + esc(C.email) + '">' + esc(C.email) + "</a></p>";
+$("footName").textContent = "© " + new Date().getFullYear() + " " + C.nom;
+$("portail").href = C.portail;
+$("mentionsBody").innerHTML =
+  "<h2>Mentions légales</h2>" +
+  "<h3>Éditeur du site</h3><p>" + esc(C.nom) + ", " + esc(C.statut) + ". " + esc(C.adresse) + ". Téléphone : " + esc(C.telephone) + ". E-mail : " + esc(C.email) + ".</p>" +
+  "<p>Responsable de la publication : " + esc(C.responsable) + ".</p>" +
+  "<h3>Hébergement</h3><p>" + esc(C.hebergeur) + ".</p>" +
+  "<h3>Conception du site</h3><p>" + esc(C.createur) + ".</p>" +
+  "<h3>Propriété intellectuelle</h3><p>Les textes, logos et éléments graphiques de ce site appartiennent à " + esc(C.nom) + " ou à leurs auteurs. Toute reproduction sans autorisation est interdite.</p>";
+$("confBody").innerHTML =
+  "<h2>Politique de confidentialité</h2>" +
+  "<p>Cette page explique quelles données personnelles sont traitées par ce site et comment vous pouvez exercer vos droits, conformément à la législation ivoirienne sur la protection des données à caractère personnel.</p>" +
+  "<h3>Responsable du traitement</h3><p>" + esc(C.nom) + ", " + esc(C.adresse) + ". Contact : " + esc(C.email) + ".</p>" +
+  "<h3>Données collectées</h3><ul><li>Votre nom et le message que vous saisissez dans le formulaire de contact.</li><li>Ce site n'utilise ni cookies publicitaires, ni outil de mesure d'audience.</li><li>Les polices de caractères sont chargées depuis Google Fonts : votre adresse IP est alors transmise à Google.</li></ul>" +
+  "<h3>Pourquoi ces données</h3><p>Uniquement pour répondre à votre demande de contact ou de rendez-vous. Elles ne sont ni vendues ni utilisées pour de la prospection.</p>" +
+  "<h3>Qui y a accès</h3><p>Le cabinet. Le formulaire ouvre WhatsApp : l'envoi de votre message est alors soumis aux conditions de WhatsApp (Meta).</p>" +
+  "<h3>Durée de conservation</h3><p>Les échanges sont conservés le temps nécessaire au traitement de votre demande, puis supprimés ou archivés selon les obligations légales du cabinet.</p>" +
+  "<h3>Secret professionnel</h3><p>Les informations confiées à un avocat sont couvertes par le secret professionnel.</p>" +
+  (C.portail !== "#contact" ? "<h3>Espace client</h3><p>Les comptes sont créés uniquement par le cabinet. L'accès est protégé par mot de passe et double authentification, et les documents sont conservés dans un stockage privé.</p>" : "") +
+  "<h3>Vos droits</h3><p>Vous pouvez demander l'accès, la rectification ou la suppression de vos données, ou vous opposer à leur traitement, en écrivant à " + esc(C.email) + ". Vous pouvez aussi saisir l'autorité de protection des données personnelles de Côte d'Ivoire (ARTCI).</p>";
+$("barTel").href = tel;
+$("barWa").href = "https://wa.me/" + C.whatsapp;
+$("form").addEventListener("submit", e => {
+  e.preventDefault();
+  const txt = "Bonjour, je suis " + $("nom").value.trim() + ". " + $("msg").value.trim();
+  window.open("https://wa.me/" + C.whatsapp + "?text=" + encodeURIComponent(txt), "_blank", "noopener");
+});
+</script>
+</body>
+</html>
